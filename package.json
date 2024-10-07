@@ -1,0 +1,36 @@
+{
+    "name": "python-package-tracker",
+    "displayName": "Python Package Tracker",
+    "description": "Tracks and displays info about Python packages used in the project.",
+    "version": "0.1.0",
+    "publisher": "your-publisher-name",
+    "engines": {
+        "vscode": "^1.94.0"
+    },
+    "activationEvents": [
+        "onLanguage:python"
+    ],
+    "main": "out/extension.js",
+    "contributes": {
+        "languages": [
+            {
+                "id": "python",
+                "extensions": [".py"],
+                "configuration": "./language-configuration.json"
+            }
+        ]
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./"
+    },
+    "devDependencies": {
+        "typescript": "^5.6.0",
+        "@types/vscode": "^1.94.0",
+        "@types/node-fetch": "^2.6.0"
+    },
+    "dependencies": {
+        "node-fetch": "^2.6.7"
+    }
+}
